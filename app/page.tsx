@@ -2,12 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Navbar from "@/components/my-components/navbar-custom";
+import SkiperCardDemo from "@/components/my-components/skiper-card-demo";
+import CardCaroursalComp from "@/components/my-components/card-caroursal-comp";
+import WrapButton  from "@/components/my-components/get-started-home";
 
 export default function Welcome() {
   return (
     <>
-    <Navbar />
-      <section className="px-4 sm:px-6 lg:px-8 pt-40 pb-20 max-w-7xl mx-auto">
+      <Navbar />
+      <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-20 max-w-7xl mx-auto">
         {/* HERO */}
         <div
           className="text-center mb-20 bg-cover bg-center py-60 px-4 sm:px-10 rounded-xl"
@@ -17,12 +20,11 @@ export default function Welcome() {
             Bienvenido a Renovation Connect
           </h1>
           <p className="text-base sm:text-lg text-white/90 mb-6 max-w-2xl mx-auto">
-            La plataforma donde clientes y profesionales de reformas se encuentran
-            para transformar hogares.
+            La plataforma donde clientes y profesionales de reformas se
+            encuentran para transformar hogares.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="default">Explora Profesionales</Button>
-            <Button variant="secondary">Soy Profesional</Button>
+          <WrapButton>Get started</WrapButton>
           </div>
         </div>
 
@@ -33,31 +35,7 @@ export default function Welcome() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
             ¿Qué te ofrecemos?
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Presupuestos Personalizados",
-                text: "Solicita y compara presupuestos de manera rápida y gratuita. Encuentra la mejor opción para tu reforma.",
-              },
-              {
-                title: "Profesionales Verificados",
-                text: "Trabajamos solo con profesionales evaluados por otros usuarios para garantizar un servicio de calidad.",
-              },
-              {
-                title: "Gestión del Proyecto",
-                text: "Visualiza el progreso de tu reforma, haz seguimiento y comunica cambios fácilmente desde tu panel.",
-              },
-            ].map(({ title, text }) => (
-              <Card key={title}>
-                <CardHeader>
-                  <CardTitle>{title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p>{text}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <CardCaroursalComp />
         </div>
 
         <Separator className="my-10" />
@@ -87,7 +65,9 @@ export default function Welcome() {
               <CardContent>
                 <ul className="list-disc list-inside space-y-1">
                   <li>Consigue más clientes sin complicaciones.</li>
-                  <li>Gestiona presupuestos y solicitudes desde un único lugar.</li>
+                  <li>
+                    Gestiona presupuestos y solicitudes desde un único lugar.
+                  </li>
                   <li>Haz crecer tu reputación con valoraciones reales.</li>
                 </ul>
               </CardContent>
@@ -99,16 +79,7 @@ export default function Welcome() {
 
         {/* HOW IT WORKS */}
         <div className="mb-20">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">¿Cómo funciona?</h2>
-          <Card className="max-w-xl mx-auto">
-            <CardContent className="pt-6">
-              <ol className="list-decimal list-inside space-y-2 text-base">
-                <li>Regístrate como cliente o profesional.</li>
-                <li>Publica o responde a solicitudes de reforma.</li>
-                <li>Comparte ideas, firma acuerdos y empieza la obra.</li>
-              </ol>
-            </CardContent>
-          </Card>
+          <SkiperCardDemo />
         </div>
 
         <Separator className="my-10" />

@@ -46,7 +46,7 @@ export default function Navbar({
     { text: "Documentation", href: "https://www.launchuicomponents.com/" },
   ],
   actions = [
-    { text: "Sign in", href: "https://www.launchuicomponents.com/", isButton: false },
+    { text: "Sign in", href: "/login", isButton: false },
     {
       text: "Get Started",
       href: "https://www.launchuicomponents.com/",
