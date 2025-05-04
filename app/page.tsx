@@ -1,108 +1,136 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button"
 import { Navbar1 } from "@/components/navbar1";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator"
 
-export default function Home() {
+export default function Welcome() {
   return (
-  
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Navbar1 />
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <div className="fixed top-0  w-full z-50 shadow bg-background">
+        <Navbar1 />
+      </div>
+      <section className="px-6 py-40 mx-auto">
+        {/* HERO */}
+        <div className="text-center py-15 mb-16">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+            Bienvenido a Renovation Connect
+          </h1>
+          <p className="text-lg mb-6">
+            La plataforma donde clientes y profesionales de reformas se
+            encuentran para transformar hogares.
+          </p>
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <Button variant="default">Explora Profesionales</Button>
+            <Button variant="secondary">Soy Profesional</Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-        <Button>Click me</Button>
-      </footer>
-    </div>
+        <Separator className="my-4" />
+        {/* FEATURES */}
+        <div className="mb-16 py-15 ">
+          <h2 className="text-2xl font-bold mb-6 text-center">
+            ¿Qué te ofrecemos?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Presupuestos Personalizados</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  Solicita y compara presupuestos de manera rápida y gratuita.
+                  Encuentra la mejor opción para tu reforma.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Profesionales Verificados</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  Trabajamos solo con profesionales evaluados por otros usuarios
+                  para garantizar un servicio de calidad.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Gestión del Proyecto</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  Visualiza el progreso de tu reforma, haz seguimiento y
+                  comunica cambios fácilmente desde tu panel.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+        <Separator className="my-4" />
+        {/* BENEFITS */}
+        <div className="mb-16 py-15">
+          <h2 className="text-2xl font-bold mb-6 text-center">
+            Beneficios para Clientes y Profesionales
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card>
+              <CardHeader>
+                <CardTitle>Para Clientes</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Encuentra al profesional perfecto en minutos.</li>
+                  <li>Recibe notificaciones del progreso.</li>
+                  <li>Guarda tus reformas favoritas e ideas.</li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Para Profesionales</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Consigue más clientes sin complicaciones.</li>
+                  <li>
+                    Gestiona presupuestos y solicitudes desde un único lugar.
+                  </li>
+                  <li>Haz crecer tu reputación con valoraciones reales.</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+        <Separator className="my-4" />
+        {/* HOW IT WORKS */}
+        <div className="mb-16 py-15">
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            ¿Cómo funciona?
+          </h2>
+          <Card className="max-w-xl mx-auto">
+            <CardContent className="pt-6">
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Regístrate como cliente o profesional.</li>
+                <li>Publica o responde a solicitudes de reforma.</li>
+                <li>Comparte ideas, firma acuerdos y empieza la obra.</li>
+              </ol>
+            </CardContent>
+          </Card>
+        </div>
+        <Separator className="my-4" />
+        {/* CALL TO ACTION */}
+        <div className="text-center py-12 rounded-xl shadow-inner">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            Únete a Renovation Connect
+          </h2>
+          <p className="mb-6">
+            Empieza hoy mismo a transformar espacios o tu carrera profesional.
+          </p>
+          <Button variant="default" size="lg">
+            Comenzar ahora
+          </Button>
+        </div>
+      </section>
+    </>
   );
 }

@@ -54,7 +54,7 @@ interface Navbar1Props {
 const Navbar1 = ({
   logo = {
     url: "/",
-    src: "https://avatars.githubusercontent.com/u/205335860?s=400&u=859827634ae4f611dea5bfe2a226e07c7c5e2d67&v=4",
+    src: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-76c8-51f7-93c6-9f3cfd5e7258/raw?se=2025-05-03T22%3A18%3A54Z&sp=r&sv=2024-08-04&sr=b&scid=7d157346-4c12-56bc-9ea5-de282c291aa3&skoid=9370dd2b-ca43-4270-bed5-18b1b71f8fa0&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-03T21%3A11%3A53Z&ske=2025-05-04T21%3A11%3A53Z&sks=b&skv=2024-08-04&sig=nDwO93Af7okHmg%2BF%2BwlIznRXph8BrF/1RZjJFKeSPNA%3D",
     alt: "logo",
     title: "Rennovation Connect",
   },
@@ -143,7 +143,7 @@ const Navbar1 = ({
           <div className="flex items-center gap-6">
             {/* Logo */}
             <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="max-h-8" alt={logo.alt} />
+              <img src={logo.src} className="max-h-14" alt={logo.alt} />
               <span className="text-lg font-semibold tracking-tighter">
                 {logo.title}
               </span>
