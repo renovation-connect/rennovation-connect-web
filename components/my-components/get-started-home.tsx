@@ -18,7 +18,7 @@ const WrapButton = ({
   return (
     <div className="flex items-center justify-center">
       {href ? (
-        <Link href={href}>
+        <Link href={href} legacyBehavior>
           <div
             className={cn(
               "group cursor-pointer border group border-[#3B3A3A] bg-[#151515] gap-2 h-[64px] flex items-center p-[11px] rounded-full",
@@ -60,7 +60,7 @@ const WrapButton = ({
         </div>
       )}
     </div>
-  )
+  );
 }
 
 export default WrapButton
