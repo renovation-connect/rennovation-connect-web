@@ -1,78 +1,73 @@
-import { Navbar1 } from "@/components/navbar1";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/components/ui/separator";
+import Navbar from "@/components/my-components/navbar-custom";
 
 export default function Welcome() {
   return (
     <>
-      <div className="fixed top-0  w-full z-50 shadow bg-background">
-        <Navbar1 />
-      </div>
-      <section className="px-6 py-40 mx-auto">
+    <Navbar />
+      <section className="px-4 sm:px-6 lg:px-8 pt-40 pb-20 max-w-7xl mx-auto">
         {/* HERO */}
-        <div className="text-center py-15 mb-16">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+        <div
+          className="text-center mb-20 bg-cover bg-center py-60 px-4 sm:px-10 rounded-xl"
+          style={{ backgroundImage: "url('/img/hero.png')" }}
+        >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-white drop-shadow">
             Bienvenido a Renovation Connect
           </h1>
-          <p className="text-lg mb-6">
-            La plataforma donde clientes y profesionales de reformas se
-            encuentran para transformar hogares.
+          <p className="text-base sm:text-lg text-white/90 mb-6 max-w-2xl mx-auto">
+            La plataforma donde clientes y profesionales de reformas se encuentran
+            para transformar hogares.
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="default">Explora Profesionales</Button>
             <Button variant="secondary">Soy Profesional</Button>
           </div>
         </div>
-        <Separator className="my-4" />
+
+        <Separator className="my-10" />
+
         {/* FEATURES */}
-        <div className="mb-16 py-15 ">
-          <h2 className="text-2xl font-bold mb-6 text-center">
+        <div className="mb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
             ¿Qué te ofrecemos?
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Presupuestos Personalizados</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  Solicita y compara presupuestos de manera rápida y gratuita.
-                  Encuentra la mejor opción para tu reforma.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Profesionales Verificados</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  Trabajamos solo con profesionales evaluados por otros usuarios
-                  para garantizar un servicio de calidad.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Gestión del Proyecto</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  Visualiza el progreso de tu reforma, haz seguimiento y
-                  comunica cambios fácilmente desde tu panel.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Presupuestos Personalizados",
+                text: "Solicita y compara presupuestos de manera rápida y gratuita. Encuentra la mejor opción para tu reforma.",
+              },
+              {
+                title: "Profesionales Verificados",
+                text: "Trabajamos solo con profesionales evaluados por otros usuarios para garantizar un servicio de calidad.",
+              },
+              {
+                title: "Gestión del Proyecto",
+                text: "Visualiza el progreso de tu reforma, haz seguimiento y comunica cambios fácilmente desde tu panel.",
+              },
+            ].map(({ title, text }) => (
+              <Card key={title}>
+                <CardHeader>
+                  <CardTitle>{title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>{text}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
-        <Separator className="my-4" />
+
+        <Separator className="my-10" />
+
         {/* BENEFITS */}
-        <div className="mb-16 py-15">
-          <h2 className="text-2xl font-bold mb-6 text-center">
+        <div className="mb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
             Beneficios para Clientes y Profesionales
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid gap-6 md:grid-cols-2">
             <Card>
               <CardHeader>
                 <CardTitle>Para Clientes</CardTitle>
@@ -92,24 +87,22 @@ export default function Welcome() {
               <CardContent>
                 <ul className="list-disc list-inside space-y-1">
                   <li>Consigue más clientes sin complicaciones.</li>
-                  <li>
-                    Gestiona presupuestos y solicitudes desde un único lugar.
-                  </li>
+                  <li>Gestiona presupuestos y solicitudes desde un único lugar.</li>
                   <li>Haz crecer tu reputación con valoraciones reales.</li>
                 </ul>
               </CardContent>
             </Card>
           </div>
         </div>
-        <Separator className="my-4" />
+
+        <Separator className="my-10" />
+
         {/* HOW IT WORKS */}
-        <div className="mb-16 py-15">
-          <h2 className="text-2xl font-bold mb-4 text-center">
-            ¿Cómo funciona?
-          </h2>
+        <div className="mb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">¿Cómo funciona?</h2>
           <Card className="max-w-xl mx-auto">
             <CardContent className="pt-6">
-              <ol className="list-decimal list-inside space-y-2">
+              <ol className="list-decimal list-inside space-y-2 text-base">
                 <li>Regístrate como cliente o profesional.</li>
                 <li>Publica o responde a solicitudes de reforma.</li>
                 <li>Comparte ideas, firma acuerdos y empieza la obra.</li>
@@ -117,13 +110,15 @@ export default function Welcome() {
             </CardContent>
           </Card>
         </div>
-        <Separator className="my-4" />
+
+        <Separator className="my-10" />
+
         {/* CALL TO ACTION */}
-        <div className="text-center py-12 rounded-xl shadow-inner">
+        <div className="text-center py-12 rounded-xl shadow-inner bg-muted">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Únete a Renovation Connect
           </h2>
-          <p className="mb-6">
+          <p className="mb-6 max-w-xl mx-auto">
             Empieza hoy mismo a transformar espacios o tu carrera profesional.
           </p>
           <Button variant="default" size="lg">
